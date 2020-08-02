@@ -1,0 +1,388 @@
+@import 'normalize'
+
+$hl-clr: #f8f8f8 // Highlighting Color
+$main-clr: #333
+$secondary-clr: #666
+$print-size: 10px
+
+html, body
+  font-family: 'Roboto', sans-serif
+  font-size: 15px
+  font-weight: 300
+  color: $main-clr
+  @media print
+    font-size: $print-size
+    font-weight: 400
+
+.wrapper
+  width: 100%
+  max-width: 1260px
+  padding: 0 15px
+  margin: 0 auto
+
+.section
+  margin-bottom: 40px
+  @media print
+    margin-bottom: 16px
+
+.title
+  font-family: 'Raleway', sans-serif
+  font-weight: 500
+  font-size: 28px
+  margin-bottom: 12px
+  @media print
+    font-size: 16px
+    font-weight: 600
+    margin-bottom: 8px
+
+.bg-gray
+  background: $hl-clr
+  padding: 20px
+  @media print
+    padding: 0
+
+// Header
+
+.header
+  display: flex
+  justify-content: space-between
+  margin: 60px 0 40px
+  @media print
+    justify-content: flex-start
+    flex-wrap: wrap
+    margin: 24px 0 16px
+  .header__row
+    display: none
+    width: 100%
+    margin-bottom: 12px
+    @media print
+      display: block
+  .header__photo
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    width: 144px
+    min-width: 12%
+    height: 144px
+    margin-right: 40px
+    @media print
+      -webkit-print-color-adjust: exact
+      margin-right: 16px
+      width: 60px
+      height: 60px
+  .header__info
+    max-width: 620px
+    @media print
+      max-width: 300px
+    .header__name
+      font-family: 'Raleway', sans-serif
+      font-weight: 600
+      font-size: 36px
+      line-height: 1.2
+      margin-bottom: 12px
+      @media print
+        font-size: 18px
+        font-weight: 700
+        margin-bottom: 4px
+    .header__age
+      position: relative
+      padding-right: 10px
+      margin-right: 10px
+      @media print
+        padding-right: 4px
+        margin-right: 4px
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translate(50%, -50%)
+        width: 2px
+        height: 2px
+        background: $main-clr
+        @media print
+          width: 1px
+          height: 1px
+          border-radius: 50%
+          border-top: 1px solid $main-clr
+    .header__place
+  .header__contacts
+    min-width: 28%
+    flex-basis: 28%
+    padding: 20px
+    height: 144px
+    @media print
+      display: none
+    &_print
+      display: flex
+      .header__contact
+        display: flex
+        margin-right: 16px
+        img
+          margin-right: 4px
+    .header__contact
+      display: flex
+      margin-bottom: 14px
+      &:last-child
+        margin-bottom: 0
+      img
+        width: 20px
+        margin-right: 12px
+
+// Page
+
+.page
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+// Main
+
+.main
+  width: 65%
+
+// Aside
+
+.sidebar
+  width: 28%
+
+// About
+
+.about
+  .about__title
+  .about__text
+
+// Experience
+
+.experience
+  .experience__title
+  .experience__item
+    margin-bottom: 32px
+    @media print
+      margin-bottom: 12px
+    .experience-item__header
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+      @media print
+        margin-bottom: 8px
+      .experience-item__position
+      .experience-item__place
+      .experience-item__title
+        font-size: 17px
+        font-weight: 400
+        @media print
+          font-size: 12px
+          font-weight: 500
+      .experience-item__subtitle
+        font-size: 13px
+        color: $secondary-clr
+        @media print
+          font-size: $print-size
+          color: $main-clr
+    .experience-item__info
+      margin-bottom: 20px
+      @media print
+        margin-bottom: 8px
+    .experience__list
+      margin-bottom: 20px
+      .experience-list__item
+        position: relative
+        padding-left: 12px
+        @media print
+          padding-left: 8px
+          margin-left: 8px
+        &::before
+          content: ''
+          position: absolute
+          top: .65em
+          left: 0
+          width: 2px
+          height: 2px
+          background: $main-clr
+          @media print
+            width: 0px
+            height: 0px
+            border-radius: 50%
+            border: 1px solid $main-clr
+
+// Accordion
+
+.accordion
+  .accordion__item
+    position: relative
+    margin-bottom: 20px
+    @media print
+      margin-bottom: 8px
+      page-break-inside: avoid
+    .accordion__header
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+      &:checked ~ .accordion__body
+        display: block
+      &:checked ~ label .accordion__subtitle
+        margin-bottom: 12px
+      &:checked ~ label .accordion__title
+        &::after
+          transform: rotate(-45deg)
+    label
+      cursor: pointer
+    .accordion__title
+      position: relative
+      font-weight: 400
+      @media print
+        padding-left: 8px
+        font-weight: 500
+        &::before
+          content: ''
+          position: absolute
+          top: .65em
+          left: 0
+          width: 4px
+          border-top: 1px solid $main-clr
+      &::after
+        content: ''
+        position: absolute
+        top: .3em
+        right: 0
+        transform: rotate(135deg)
+        width: 10px
+        height: 10px
+        border-right: 2px solid #999
+        border-top: 2px solid #999
+        @media print
+          display: none
+      &.expanded
+        &::after
+          display: none
+    .accordion__subtitle
+      font-size: 13px
+      color: $secondary-clr
+      @media print
+        font-size: 6px
+        color: $main-clr
+        padding-left: 8px
+        margin-bottom: 4px
+    .accordion__body
+      display: none
+      @media print
+        p
+          margin-left: 8px
+      .experience__list
+        margin-top: 6px
+        margin-bottom: 0
+
+// Recommendation
+
+.recommendation
+  .recommendation__title
+  .recommendation__item
+    margin-bottom: 20px
+    .recommendation-item__title
+      font-weight: 500
+    .recommendation-item__text
+
+// Skills
+
+.skills
+  .skills__title
+  .skills__list
+    display: flex
+    flex-wrap: wrap
+    .skills-list__item
+      position: relative
+      font-size: 13px
+      display: inline-block
+      padding: 4px 12px
+      background: $hl-clr
+      border-radius: 16px
+      margin: 0 4px 8px 0
+      @media print
+        font-size: $print-size
+        background: transparent
+        padding: 0
+        margin: 0 3px 0 0
+        &::after
+          content: ','
+          position: absolute
+          bottom: 0
+          right: -1.5px
+        &:last-child::after
+          display: none
+
+// Education
+
+.education
+  .education__title
+  .education__university
+    margin-bottom: 12px
+    @media print
+      margin-bottom: 4px
+  .education__speciality
+    font-weight: 400
+    margin-bottom: 4px
+    @media print
+      font-weight: 500
+      margin-bottom: 0
+  .education__year
+    font-size: 13px
+    color: $secondary-clr
+    @media print
+      font-size: $print-size
+      color: $main-clr
+
+// Certificates
+
+.certificates
+  .certificates__title
+  .certificates__item
+    margin-bottom: 20px
+    @media print
+      margin-bottom: 8px
+    .certificates__name
+      margin-bottom: 8px
+      @media print
+        margin-bottom: 2px
+    .certificates__year
+      font-size: 13px
+      font-weight: 400
+      line-height: 1.2
+      color: $secondary-clr
+      @media print
+        font-size: $print-size
+        color: $main-clr
+
+// Links
+
+.links
+  .links__title
+  .links__item
+    margin-bottom: 20px
+    @media print
+      margin-bottom: 8px
+    .links__link
+      display: block
+      color: #1771e6
+      margin-bottom: 8px
+      @media print
+        margin-bottom: 2px
+    .links__name
+      font-size: 13px
+      color: $secondary-clr
+      @media print
+        font-size: $print-size
+        color: $main-clr
+
+// Hobby
+
+.hobby
+  .hobby__title
+  .hobby__text
+
+// languages
+
+.languages
+  .languages__title
+  .languages__text
