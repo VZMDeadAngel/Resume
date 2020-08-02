@@ -71,7 +71,7 @@ export default class App extends Component {
                         <div className="header__contacts bg-gray">
                             <div className="header__contact">
                                 <img src="img/linkedin.svg" alt="" />
-                                <a href={this.state.user.linkedIdLink.link}>{this.state.user.linkedIdLink.name}</a>
+                                <a target="_blank" href={this.state.user.linkedIdLink.link}>{this.state.user.linkedIdLink.name}</a>
                             </div>
                             <div className="header__contact">
                                 <img src="img/phone.svg" alt="" />
