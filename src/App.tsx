@@ -43,6 +43,7 @@ export default class App extends Component {
         } else {
             return (
                 <div className="wrapper">
+                    <div></div>
                     <header className="header">
                         <div className="header__row">
                             <div className="header__contacts_print">
@@ -96,7 +97,7 @@ export default class App extends Component {
                                 <h2 className="experience__title title">Опыт работы</h2>
                                 {
                                     this.state.user.work.map((el: WorkPlace, i: number) => {
-                                        return (<ExperienceItem key={i} workplace={el}></ExperienceItem>);
+                                        return (<ExperienceItem key={i} workplace = {el}></ExperienceItem>);
                                     })
                                 }
                             </div>
@@ -195,6 +196,7 @@ export default class App extends Component {
                                     :
                                     null
                             }
+
                             {
                                 // Языки
                                 this.state.user.languages.length
