@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 import FullBody from "../models/FullBody";
+import { Tracing } from "trace_events";
 
 type Params = {
     body: FullBody
 }
 
-const ExpirenceItemBody = ({ body }: Params) => {
+const ExpirenceItemBody = ({ body: {body, list} }: Params) => {
 
     var bodyControl = null;
     var listControl = null;
 
-    if ((body.body != null) && (body.body != '')) {
+    if ((body != null) && (body != '')) {
         bodyControl = (
-            <p>{body.body}</p>
+            <p>{body}</p>
         );
     }
 
-    if (body.list.length > 0) {
+    if (list.length > 0) {
         listControl = (
             <ul className="experience__list">
                 {
-                    body.list.map((l: string, i: number) => {
+                    list.map((l: string, i: number) => {
                         return (<li key={i} className="experience-list__item">{l}</li>);
                     })
                 }
