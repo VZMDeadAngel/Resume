@@ -13,11 +13,13 @@ const ExperienceItem = ({ workplace }: Params) => {
 
     const dateService = new DateService();
 
-    const getStyle = ((p: Project): any => {
+    const getStyle = ((p: Project, nextp?: Project): any => {
         if (p.accordion) {
             return {
                 bodyStyle: {},
-                accordeonStyle: {},
+                accordeonStyle: {
+                    marginBottom: (nextp != null && !nextp.accordion) ? '0px' : ''
+                },
                 titleClasses: 'accordion__title',
                 inputStyle: null,
                 titleStyle: {
@@ -64,7 +66,7 @@ const ExperienceItem = ({ workplace }: Params) => {
             <p className="experience-item__info">{workplace.positionDescription}</p>
             {
                 workplace.projects.map((el: Project, i: number) => {
-                    let styles = getStyle(el);
+                    let styles = getStyle(el, workplace.projects[i + 1]);
                     return (
                         <div className="accordion" key={i}>
                             <div className="accordion__item bg-gray" style={styles.accordeonStyle}>

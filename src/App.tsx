@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../src/styles/style.sass';
 import UserService from './services/UserService';
-import Employee from './models/Employee';
 import Education from './models/Education';
 import Certificate from './models/Certificate';
 import Link from './models/Link';

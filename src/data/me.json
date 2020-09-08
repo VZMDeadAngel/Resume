@@ -53,10 +53,10 @@
         "name": "evgeny-malahov"
     },
     "languages": [],
-    "hobbies": [],
+    "hobbies": ["Почётный член клуба пыльной гантели", "Поездки на мотоцикле"],
     "links": [{
         "urlLink": "https://github.com/VZMDeadAngel/Resume",
-        "description": "Проект данного сайта резюме"
+        "description": "Проект данного сайта"
     }],
     "work": [{
             "city": "Москва",
@@ -64,7 +64,7 @@
             "startDate": "01.09.2017",
             "endDate": null,
             "positionName": "Системный архитектор",
-            "positionDescription": "",
+            "positionDescription": "В мои обязанности на данной должности, помимо разработки, входило управление командой разработки, ревью кода, постановка задач, планирование разработки.",
             "projects": [{
                     "startDate": "01.07.2020",
                     "endDate": "01.04.2020",
