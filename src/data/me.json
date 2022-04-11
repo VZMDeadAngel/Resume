@@ -37,16 +37,13 @@
     ],
     "certificates": [
         {
-            "name": "MCSA: SQL Server 2012/2014",
-            "year": 2015
+            "name": "MCSA: SQL Server"
         },
         {
-            "name": "MS: Programming in HTML5 with JavaScript and CSS3",
-            "year": 2015
+            "name": "MS: Programming in HTML5 with JavaScript and CSS3"
         },
         {
-            "name": "MS: Programming in C#",
-            "year": 2015
+            "name": "MS: Programming in C#"
         }
     ],
     "email": "evgeny.malahov@live.com",
