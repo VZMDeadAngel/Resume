@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import FullBody from "../models/FullBody";
-import { Tracing } from "trace_events";
 
 type Params = {
     body: FullBody

@@ -45,13 +45,17 @@ export default class App extends Component {
                     <div></div>
                     <header className="header">
                         <div className="header__row">
-                            <div className="header__contacts_print">
-                                <div className="header__contact">
+                            <div className="header__contacts_print" style={{
+            marginBottom: 10
+        }}>
+                                {/* <div className="header__contact">
                                     <img src="img/linkedin-sm.svg" alt="" />
                                     <span>{this.state.user.linkedIdLink.name}</span>
-                                </div>
+                                </div> */}
                                 <div className="header__contact">
-                                    <img src="img/phone-sm.svg" alt="" />
+                                    <img src="img/phone-sm.svg" alt="" style={{
+                                        "width": 10
+                                    }} />
                                     <span>{this.state.user.phone}</span>
                                 </div>
                                 <div className="header__contact">
@@ -212,8 +216,5 @@ export default class App extends Component {
                 </div >
             );
         }
-
-
     }
-
 }
